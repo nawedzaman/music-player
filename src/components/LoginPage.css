@@ -19,6 +19,7 @@
   left: calc(50% - 207px);
   width: 410px;
   height: 50px;
+  cursor: pointer;
 }
 .description {
   top: calc(50% - 64px);
@@ -28,6 +29,7 @@
   display: inline-block;
   width: 414px;
   height: 49px;
+  cursor: text;
 }
 .rectangle-parent {
   position: absolute;

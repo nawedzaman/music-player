@@ -1,0 +1,152 @@
+.resend-otp,
+.use-another-number {
+  position: absolute;
+  top: calc(50% + 8px);
+  left: calc(50% - 73.5px);
+  text-decoration: underline;
+  font-weight: 300;
+  display: inline-block;
+  width: 147px;
+}
+.resend-otp {
+  top: calc(50% - 26px);
+  left: calc(50% - 47.5px);
+  width: 91px;
+}
+.use-another-number-parent {
+  position: absolute;
+  top: calc(50% + 115px);
+  left: calc(50% - 73px);
+  width: 147px;
+  height: 52px;
+  font-family: var(--font-helvetica);
+  cursor: pointer;
+}
+.otp-btn-child {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 207px);
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  width: 414px;
+  height: 50px;
+}
+.verify {
+  top: calc(50% - 11px);
+  left: calc(50% - 29.28px);
+  display: inline-block;
+  width: 57.56px;
+}
+.otp-btn,
+.otp-rectangle,
+.verify {
+  position: absolute;
+}
+.otp-btn {
+  top: calc(50% + 40px);
+  left: calc(50% - 207px);
+  width: 414px;
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--background-white);
+  cursor: pointer;
+}
+.otp-description {
+  top: calc(50% - 112px);
+  font-size: var(--small-text-size);
+  display: inline-block;
+  width: 414px;
+  height: 49px;
+}
+.otp-description,
+.group-parent,
+.otp-verification {
+  position: absolute;
+  left: calc(50% - 207px);
+  top: 50px;
+}
+.otp-verification {
+  top: calc(50% - 167px);
+  font-size: 38px;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-align: center;
+}
+.group-parent {
+  top: calc(50% - 150px);
+  width: 414px;
+  height: 334px;
+}
+.login-login-page-verify-otp {
+  position: relative;
+  background-color: var(--background-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  font-family: var(--small-text);
+}
+.otp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .otp-inputs-container {
+    position: absolute;
+    top: 100px;
+  }
+  
+  .otp-input {
+    width: 78.54px;
+    height: 77.209px;
+    margin:0 9px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-weight: bold;
+  }
+  
+  .otp-submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .otp-submit-button:hover {
+    background-color: #45a049;
+  }
+  .error-message {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #a31212;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .error-message.show {
+    opacity: 1;
+  }

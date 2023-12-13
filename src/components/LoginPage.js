@@ -36,7 +36,7 @@ const LoginPage = () => {
       <div className="login-login-page">
         <div className="phone-input-border">
         <PhoneInput
-          country={"eg"}
+          country={"in"}
           enableSearch={true}
           value={phoneNumber}
           onChange={(phoneNumber) => setPhoneNumber(phoneNumber)}
@@ -48,10 +48,10 @@ const LoginPage = () => {
           verify your number.
         </div>
           <div className="btn-parent">
-            <div className="btn">
-              <button className="btn-child" onClick={handleLogin}></button>
+            <div className="btn"  onClick={handleLogin}>
+              <button className="btn-child"></button>
               <b className="sign-in">Sign In</b>
-              {error && <p style={{ color: "red" }}>{error}</p>}
+              <div className={`error-message ${error ? 'show' : ''}`}>{error}</div>
             </div>
           </div>
       </div>
