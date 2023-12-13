@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import 'useNavigate' instead of 'useHistory'
-import { loginUser } from '../services/api';
+import { useNavigate } from 'react-router-dom'; 
+import { sendOTP } from '../services/api';
 
 const LoginPage = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Use 'useNavigate' instead of 'useHistory'
+  const navigate = useNavigate(); 
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -16,10 +16,9 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await loginUser(phoneNumber);
+      const response = await sendOTP(phoneNumber);
 
-      if (response.success) {
-        // Redirect to the OTP verification page
+      if (response) {
         navigate('/verify-otp');
       } else {
         setError('Login failed. Please check your phone number and try again.');
@@ -34,7 +33,7 @@ const LoginPage = () => {
       <h2>Login Page</h2>
       <form onSubmit={handleLogin}>
         <label>
-          Phone Number:
+          Phone Number:add country code +91
           <input
             type="text"
             value={phoneNumber}

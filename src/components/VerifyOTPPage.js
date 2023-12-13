@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import verifyOTPFunction from '../services/api'
+import {verifyOTP} from '../services/api'
 
-const VerifyOTPPage = () => {
+const VerifyOTPPage = ( {onVerifySuccess}) => {
   const [otp, setOtp] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -10,12 +10,11 @@ const VerifyOTPPage = () => {
   const handleVerifyOTP = async (e) => {
     e.preventDefault();
 
-    // Replace this with your actual OTP verification logic
-    const isOtpValid = await verifyOTPFunction(otp);
+    const isOtpValid = await verifyOTP(otp);
 
     if (isOtpValid) {
-      // Redirect to the next page after successful OTP verification
-      navigate('/dashboard');
+        onVerifySuccess();
+        navigate('/');
     } else {
       setError('Invalid OTP. Please try again.');
     }
