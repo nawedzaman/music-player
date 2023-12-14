@@ -1,0 +1,33 @@
+.song-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 75%;
+  margin-left: auto;
+}
+
+.title {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  gap: 16px;
+}
+.title h1 {
+    color: var(--character-title-85, rgba(0, 0, 0, 0.85));
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.add-song-button button {
+  display: flex;
+  padding: 5px 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  background: #fdb927;
+}
