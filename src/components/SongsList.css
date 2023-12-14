@@ -35,8 +35,9 @@
 }
 
 .thumbnail-container {
-  width: 50px; /* Adjust as needed */
-  height: 50px; /* Adjust as needed */
+  width: 71.999px;
+  height: 71.999px;
+  flex-shrink: 0;
   margin-right: 10px;
 }
 
