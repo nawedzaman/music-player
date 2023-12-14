@@ -39,15 +39,16 @@
   color: black;
 }
 .react-tel-input {
-    position: absolute;
-    top: 498px;
-    z-index: 10;
-    border: 1px solid black;
-    width: 19%;
-    border-radius: 5px;
-    left: calc(50% - 207px);
-    outline: none;
-        
+  position: relative; /* Change to relative positioning */
+  top: 498px;
+  z-index: 10;
+  border: 1px solid black;
+  width: 19%;
+  border-radius: 5px;
+  left: calc(50% - 207px);
+  outline: none;
+  height: 59px;
+  width: 407px;
 }
 .react-tel-input .form-control:focus{
     box-shadow: none;
@@ -60,10 +61,21 @@
 }
 
 .react-tel-input .flag-dropdown {
-  left: calc(50% - 205px);
+  position: absolute;
+  left: 0;
+  padding: 0;
+  border-radius: 3px 3px 0 0; /* Adjust border-radius as needed */
 }
 .react-tel-input .form-control {
-  padding: 18.5px 14px 18.5px 10px;
+  position: absolute;
+  left: 45px;
+  width: 75%;
+  height: 100%; /* Take up the full height of the .react-tel-input */
+  box-sizing: border-box; /* Include padding and border in the width */
+  padding: 18.5px 14px 18.5px 10px; /* Adjust padding as needed */
+  font-weight: bold;
+  border: none;
+  outline: none; /* Remove default focus styles */
 }
 .btn-parent,
 .rectangle-parent,
