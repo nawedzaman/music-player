@@ -54,6 +54,14 @@ const Player = () => {
     }
   }, [currentTime]);
 
+  useEffect(() => {
+    const indexOfCurrentlyPlaying = songs.findIndex(song => song.currentlyPlaying);
+  
+    if (indexOfCurrentlyPlaying !== -1 && indexOfCurrentlyPlaying !== currentSongIndex) {
+      setCurrentSongIndex(indexOfCurrentlyPlaying);
+    }
+  }, [songs, currentSongIndex]);
+  
   const handlePlayButtonClick = () => {
     const audio = audioRef.current;
     if (audio) {
