@@ -16,10 +16,14 @@ export const SongsProvider = ({ children }) => {
     console.log(updatedSongs);
     setSongs(updatedSongs);
   };
-  // Add any other functions or states related to songs data
+  const deleteSong = (index) => {
+    const updatedSongs = [...songs];
+    updatedSongs.splice(index, 1);
+    setSongs(updatedSongs);
+  };
 
   return (
-    <SongsContext.Provider value={{ songs, addSong,updateSong }}>
+    <SongsContext.Provider value={{ songs, addSong,updateSong,deleteSong }}>
       {children}
     </SongsContext.Provider>
   );
