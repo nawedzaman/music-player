@@ -1,0 +1,58 @@
+/* SongsList.css */
+
+.song-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .thumbnail-container {
+    margin-right: 10px;
+  }
+  
+  .thumbnail-container img {
+    max-width: 100px; /* Adjust the maximum width of the thumbnail */
+    height: auto;
+  }
+  
+  .song-details {
+    flex-grow: 1;
+  }
+  
+  .song-info {
+    margin-bottom: 5px;
+  }
+  
+  .song-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .song-source {
+    color: #666;
+  }
+  
+  .song-metadata {
+    color: #888;
+  }
+  
+  .song-actions button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .play-button {
+    background-color: #2ecc71;
+  }
+  
+  .delete-button {
+    background-color: #e74c3c;
+  }
+  
