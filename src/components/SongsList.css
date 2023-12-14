@@ -1,58 +1,120 @@
 /* SongsList.css */
 
+.heading-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-left:auto;
+  width: 75%;
+}
+
+.heading1,
+.heading2,
+.heading3 {
+  flex: 1;
+  text-align: left;
+  font-family: Roboto;
+}
+.song-container{
+  width: 75%;
+  margin-left: auto;
+}
+.song-container ul{
+  padding: 0px;
+  flex: 1;
+  text-align: left;
+}
 .song-item {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-  }
-  
-  .thumbnail-container {
-    margin-right: 10px;
-  }
-  
-  .thumbnail-container img {
-    max-width: 100px; /* Adjust the maximum width of the thumbnail */
-    height: auto;
-  }
-  
-  .song-details {
-    flex-grow: 1;
-  }
-  
-  .song-info {
-    margin-bottom: 5px;
-  }
-  
-  .song-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 5px;
-  }
-  
-  .song-source {
-    color: #666;
-  }
-  
-  .song-metadata {
-    color: #888;
-  }
-  
-  .song-actions button {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-  
-  .play-button {
-    background-color: #2ecc71;
-  }
-  
-  .delete-button {
-    background-color: #e74c3c;
-  }
-  
+  list-style: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.thumbnail-container {
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+.thumbnail-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.song-details {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 25%;
+}
+.song-info2{
+  display: flex;
+  align-items: center;
+  width: 25%;
+}
+
+.song-title {
+  color: var(--character-title-85, rgba(0, 0, 0, 0.85));
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; 
+}
+
+.song-source {
+  color: var(--character-title-85, rgba(0, 0, 0, 0.85));
+text-align: right;
+/* Body 14 / regular */
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 157.143% */
+}
+
+.song-metadata {
+  color: #777;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 25%;
+}
+
+.song-actions {
+  display: flex;
+  align-items: center;
+  width: 25%;
+}
+
+.play-button,
+.pause-button,
+.delete-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pause-button {
+  background-color: #e74c3c;
+}
+
+/* Add more styles as needed */
+

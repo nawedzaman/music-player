@@ -4,7 +4,7 @@ import { useSongsContext } from "../utils/SongsContext";
 import DeletePopup from "../utils/DeletePopup";
 
 const SongsList = () => {
-  const { songs, updateSong,deleteSong } = useSongsContext();
+  const { songs, updateSong, deleteSong } = useSongsContext();
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [songIndexToDelete, setSongIndexToDelete] = useState(null);
 
@@ -35,62 +35,79 @@ const SongsList = () => {
 
   const handleConfirmDelete = () => {
     if (songIndexToDelete !== null) {
-      deleteSong(songIndexToDelete)
+      deleteSong(songIndexToDelete);
       setShowDeletePopup(false);
       setSongIndexToDelete(null);
     }
   };
   return (
-    <div>
-      <h2>Song List</h2>
-      <ul>
-        {songs.map((song, index) => (
-          <li key={index} className="song-item">
-            <div className="thumbnail-container">
-              <img src={song?.thumbnail} alt="Thumbnail" />
-            </div>
-            <div className="song-details">
-              <div className="song-info">
-                <span className="song-title">{song?.title}</span>
-                <span className="song-source">{song?.source}</span>
-              </div>
-              <div className="song-metadata">
-                <span className="added-on">Added On: {song?.addedOn}</span>
-              </div>
-              <div className="song-actions">
-                {song.currentlyPlaying ? (
+    <>
+      <div className="heading-container">
+        <div className="heading1">
+          <h2>SONG NAME </h2>
+        </div>
+        <div className="heading2">
+          <h2>SOURCE</h2>
+        </div>
+        <div className="heading3">
+          <h2>ADDED ON</h2>
+        </div>
+        <div className="heading3">
+          <h2>Actions</h2>
+        </div>
+      </div>
+      <div className="song-container">
+        <ul>
+          {songs.map((song, index) => (
+            <li key={index} className="song-item">
+              <div className="song-details">
+                <div className="song-info">
+                  <span className="thumbnail-container">
+                    <img src={song?.thumbnail} alt="Thumbnail" />
+                  </span>
+                  <span className="song-title">{song?.title}</span>
+                </div>
+                <div className="song-info2">
+                  <span className="song-source">{song?.source}</span>
+                </div>
+                <div className="song-metadata">
+                  <span className="added-on">{song?.addedOn}</span>
+                </div>
+                <div className="song-actions">
+                  {song.currentlyPlaying ? (
+                    <button
+                      className="pause-button"
+                      onClick={() => onPauseButtonClick(index)}
+                    >
+                      Stop
+                    </button>
+                  ) : (
+                    <button
+                      className="play-button"
+                      onClick={() => onPlayButtonClick(index)}
+                    >
+                      Play
+                    </button>
+                  )}
                   <button
-                    className="pause-button"
-                    onClick={() => onPauseButtonClick(index)}
+                    className="delete-button"
+                    onClick={() => handleDelete(index)}
                   >
-                    Stop
+                    Delete
                   </button>
-                ) : (
-                  <button
-                    className="play-button"
-                    onClick={() => onPlayButtonClick(index)}
-                  >
-                    Play
-                  </button>
-                )}
-                <button
-                  className="delete-button"
-                  onClick={() => handleDelete(index)}
-                >
-                  Delete
-                </button>
-                {showDeletePopup && (
-                  <DeletePopup
-                    onCancel={handleCancelDelete}
-                    onConfirm={handleConfirmDelete}
-                  />
-                )}
+                  {showDeletePopup && (
+                    <DeletePopup
+                      onCancel={handleCancelDelete}
+                      onConfirm={handleConfirmDelete}
+                    />
+                  )}
+                </div>
               </div>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
