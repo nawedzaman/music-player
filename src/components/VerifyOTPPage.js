@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { verifyOTP } from "../services/api";
 import "./VerifyOTPPage.css";
-const VerifyOTPPage = ({ onVerifySuccess }) => {
+const VerifyOTPPage = () => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -43,9 +43,8 @@ const VerifyOTPPage = ({ onVerifySuccess }) => {
     const enteredOtp = parseInt(otp.join(""), 10);
     try {
       const isOtpValid = await verifyOTP(enteredOtp);
-
       if (isOtpValid) {
-        onVerifySuccess();
+        localStorage.setItem('token', isOtpValid);
         navigate("/");
       } else {
         setError("Invalid OTP. Please try again.");
