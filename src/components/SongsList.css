@@ -4,8 +4,6 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  margin-left:auto;
-  width: 75%;
 }
 
 .heading1,
@@ -14,10 +12,6 @@
   flex: 1;
   text-align: left;
   font-family: Roboto;
-}
-.song-container{
-  width: 75%;
-  margin-left: auto;
 }
 .song-container ul{
   padding: 0px;
@@ -29,7 +23,6 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 10px;
-  padding: 10px;
   display: flex;
   align-items: center;
 }

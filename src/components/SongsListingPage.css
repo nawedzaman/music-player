@@ -1,0 +1,19 @@
+/* SongsListingPage.css */
+
+.page-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 10%;
+    background-color: #333; /* Add your preferred background color */
+    color: #fff; /* Add your preferred text color */
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f4f4f4; /* Add your preferred background color for the main content */
+  }
+  
