@@ -6,6 +6,8 @@ const AddSong = ({ isDialogOpen, setIsDialogOpen }) => {
     const [songLink, setSongLink] = useState('');
     const [songSource, setSongSource] = useState('');
     const [thumbnail, setThumbnail] = useState('');
+    const [hasThumbnail, setHasThumbnail] = useState(false);
+    const [thumbnailName,setThumbnailName]= useState('');
     const { addSong } = useSongsContext()
   
     const handleAddClick = () => {
@@ -19,29 +21,38 @@ const AddSong = ({ isDialogOpen, setIsDialogOpen }) => {
         setIsDialogOpen(false);
       }
     };
-  
+    const clearThumbnail = () => {
+      setThumbnail('');
+      setHasThumbnail(false);
+      setThumbnailName('')
+    };
     const handleThumbnailUpload = (event) => {
       const uploadedThumbnail = event.target.files[0];
-    
+     
       if (uploadedThumbnail) {
+        setThumbnailName(uploadedThumbnail.name)
         const reader = new FileReader();
     
         reader.onloadend = () => {
           setThumbnail(reader.result);
+          setHasThumbnail(true);
         };
     
         reader.readAsDataURL(uploadedThumbnail);
       }
     };
-  
+  console.log(thumbnail);
     return (
       <>
-      {isDialogOpen && (
+        {isDialogOpen && (
           <div className="add-song-overlay">
             <div className="add-song">
               <div className="dialog-header">
                 <span className="dialog-heading">Add Song</span>
-                <button className="close-button" onClick={() => setIsDialogOpen(false)}>
+                <button
+                  className="close-button"
+                  onClick={() => setIsDialogOpen(false)}
+                >
                   X
                 </button>
               </div>
@@ -74,27 +85,41 @@ const AddSong = ({ isDialogOpen, setIsDialogOpen }) => {
                   />
                 </div>
                 <div className="form-field">
-                  <label>Click to Upload Profile Thumbnail:</label>
-                  <input type="file" onChange={handleThumbnailUpload} />
+                  <label class="custom-file-upload">
+                    <span className="upload-icon" >
+                      &#x2191;
+                    </span><span>Click to Upload Profile Thumbnail</span>
+                    <input type="file" onChange={handleThumbnailUpload} />
+                  </label>
                 </div>
-                {thumbnail && (
+                {hasThumbnail && (
                   <div className="thumbnail-preview">
-                    <img src={thumbnail} alt="Thumbnail Preview" />
+                    <span className='thumbnail-span'>
+                      <img src={thumbnail} alt="Thumbnail Preview" />
+                      <span className='thumbnail-name'>{thumbnailName}</span>
+                      </span>
+                    
+                    <span className="delete-icon" onClick={clearThumbnail}>
+                      &#x2715;
+                    </span>
                   </div>
                 )}
                 <div className="thumbnail-message">
-                  <p>Image has to be of aspect ratio 1:1 with a size of 3000 pixels x 3000 pixels</p>
+                  <p>
+                    Image has to be of aspect ratio 1:1 with a size of 3000
+                    pixels x 3000 pixels
+                  </p>
                 </div>
               </div>
               <div className="dialog-footer">
-              <button onClick={() => setIsDialogOpen(false)}>Cancel</button>
-              <button onClick={handleAddClick}>Add</button>
+                <button onClick={() => setIsDialogOpen(false)}>Cancel</button>
+                <button onClick={handleAddClick}>Add</button>
               </div>
             </div>
           </div>
         )}
       </>
-    )}
+    );}
   
   export default AddSong;
   
