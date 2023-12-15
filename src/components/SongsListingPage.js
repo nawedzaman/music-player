@@ -10,10 +10,8 @@ const SongsListingPage = () => {
   return (
     <div className="page-container">
       <SongsProvider>
-        {/* Sidebar on the left */}
         <Sidebar />
 
-        {/* Main content on the right */}
         <div className="main-content">
           <SongHeader />
           <SongsList />
