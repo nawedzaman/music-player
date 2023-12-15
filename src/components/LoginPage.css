@@ -13,6 +13,12 @@
   top: calc(50% - 11px);
   left: calc(50% - 29px);
 }
+.btn-child:hover{
+ background-color: #4d1581;
+}
+.sign-in.loading{
+  display: none;
+}
 .btn,
 .description {
   position: absolute;
@@ -93,6 +99,9 @@
   top: calc(50% + 69px);
   width: 414px;
   height: 50px;
+}
+.btn-child.loading {
+  background: url('../assests/Spinner.svg') no-repeat center center;
 }
 .login-login-page {
   position: relative;

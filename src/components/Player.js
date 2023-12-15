@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSongsContext } from "../utils/SongsContext";
 import "./Player.css";
+import "../assests/prev.svg";
 
 const Player = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -104,30 +105,41 @@ const Player = () => {
 
   return (
     <>
-      <div className={`player-container ${songs.some((song) => song.currentlyPlaying) ? "show" : ""}`}>
+      <div
+        className={`player-container ${
+          songs.some((song) => song.currentlyPlaying) ? "show" : ""
+        }`}
+      >
         <div className="progress-bar">
-        <input
-          ref={timeRangeRef}
-          type="range"
-          value={currentTime}
-          max={duration}
-          onChange={(e) => handleSeek(parseFloat(e.target.value))}
-        />
+          <input
+            ref={timeRangeRef}
+            type="range"
+            max={duration}
+            onChange={(e) => handleSeek(parseFloat(e.target.value))}
+          />
         </div>
         <div className="player-details">
           <div className="player-img">
-            <img src={songs[currentSongIndex]?.thumbnail} alt="Thumbnail" />
+            <img
+              src={
+                songs[currentSongIndex]?.thumbnail
+                  ? songs[currentSongIndex]?.thumbnail
+                  : require("../assests/player-img.png")
+              }
+              alt="Thumbnail"
+            />
           </div>
           <div className="player-name">
-          <h2>{songs[currentSongIndex]?.title}</h2>
+            <h2>{songs[currentSongIndex]?.title}</h2>
           </div>
           <div className="player-button-container">
-          <button onClick={handlePrev}>Previous</button>
-          <button onClick={handlePlayButtonClick}>
-            {isPlaying ? "Pause" : "Play"}
-          </button>
-          <button onClick={handleNext}>Next</button>
-        </div>
+            <button className="player-previous" onClick={handlePrev}></button>
+            <button
+              className={`player ${isPlaying ? "pause" : "play"}`}
+              onClick={handlePlayButtonClick}
+            ></button>
+            <button className="player-next" onClick={handleNext}></button>
+          </div>
         </div>
         <audio ref={audioRef}>
           <source src={songs[currentSongIndex]?.url} type="audio/mp3" />

@@ -5,6 +5,7 @@ import "./VerifyOTPPage.css";
 const VerifyOTPPage = () => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleLoginRoute = () => {
     navigate("/login");
@@ -42,6 +43,7 @@ const VerifyOTPPage = () => {
     e.preventDefault();
     const enteredOtp = parseInt(otp.join(""), 10);
     try {
+      setLoading(true);
       const isOtpValid = await verifyOTP(enteredOtp);
       if (isOtpValid) {
         localStorage.setItem('token', isOtpValid);
@@ -51,6 +53,8 @@ const VerifyOTPPage = () => {
       }
     } catch (error) {
       setError("An error occurred while verifying OTP. Please try again.");
+    }finally {
+      setLoading(false); 
     }
   };
   useEffect(() => {
@@ -75,8 +79,8 @@ const VerifyOTPPage = () => {
           </div>
         </div>
         <div className="otp-btn" onClick={handleVerifyOTP}>
-          <div className="otp-btn-child" />
-          <b className="verify">Verify</b>
+          <div className={`otp-btn-child ${loading ? 'loading' : ''}`} ></div> 
+          <b className={`verify${loading ? 'loading' : ''}`}>Verify</b>
         </div>
 
         <div className="otp-container">

@@ -59,9 +59,7 @@ const SongsList = () => {
         <div className="heading3">
           <h2>ADDED ON</h2>
         </div>
-        <div className="heading3">
-          {/* <h2>Actions</h2> */}
-        </div>
+        <div className="heading3">{/* <h2>Actions</h2> */}</div>
       </div>
       <div className="song-container">
         <ul>
@@ -70,7 +68,14 @@ const SongsList = () => {
               <div className="song-details">
                 <div className="song-info">
                   <span className="thumbnail-container">
-                    <img src={song?.thumbnail} alt="Thumbnail" />
+                    <img
+                      src={
+                        song?.thumbnail
+                          ? song?.thumbnail
+                          : require("../assests/player-img.png")
+                      }
+                      alt="Thumbnail"
+                    />
                   </span>
                   <span className="song-title">{song?.title}</span>
                 </div>

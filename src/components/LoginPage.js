@@ -8,6 +8,7 @@ import "./LoginPage.css";
 const LoginPage = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ const LoginPage = () => {
     }
 
     try {
+      setLoading(true);
       const formattedPhoneNumber = `+${phoneNumber}`;
       const response = await sendOTP(formattedPhoneNumber);
 
@@ -28,6 +30,8 @@ const LoginPage = () => {
       }
     } catch (error) {
       setError("An error occurred. Please try again later.");
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -49,8 +53,8 @@ const LoginPage = () => {
         </div>
           <div className="btn-parent">
             <div className="btn"  onClick={handleLogin}>
-              <button className="btn-child"></button>
-              <b className="sign-in">Sign In</b>
+              <button className={`btn-child ${loading ? 'loading' : ''}`} ></button>
+              <b className={`sign-in${loading ? 'loading' : ''}`}>Sign In</b>
               <div className={`error-message ${error ? 'show' : ''}`}>{error}</div>
             </div>
           </div>

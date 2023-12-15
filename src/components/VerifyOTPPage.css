@@ -31,6 +31,15 @@
   width: 414px;
   height: 50px;
 }
+.verify.loading{
+  display: none;
+}
+.otp-btn-child:hover{
+  background-color: #4d1581;
+ }
+.otp-btn-child.loading{
+  background: url('../assests/Spinner.svg') no-repeat center center;
+}
 .verify {
   top: calc(50% - 11px);
   left: calc(50% - 29.28px);
@@ -114,21 +123,7 @@
     font-weight: bold;
   }
   
-  .otp-submit-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-  }
-  
-  .otp-submit-button:hover {
-    background-color: #45a049;
-  }
+
   .error-message {
     position: fixed;
     bottom: 16px;
