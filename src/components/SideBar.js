@@ -2,10 +2,12 @@
 
 import React from 'react';
 import './SideBar.css'
+import { useNavigate } from "react-router-dom";
 const Sidebar = () => {
+  const navigate = useNavigate();
   const handleLogout = () => {
-    // Add your logout logic here
-    console.log('User logged out');
+    localStorage.removeItem('token');
+    navigate("/login");
   };
 
   return (

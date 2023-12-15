@@ -61,14 +61,14 @@
   font-weight: 500;
 }
 
-input[type="text"] {
+.form-field input[type="text"] {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
   border: 1px solid #e5e2e2;
   border-radius: 4px;
 }
-input[type="text"]:focus {
+.form-field input[type="text"]:focus {
   outline: 1px solid black;
 }
 
