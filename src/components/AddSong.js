@@ -47,34 +47,34 @@ const AddSong = ({ isDialogOpen, setIsDialogOpen }) => {
               </div>
               <div className="dialog-body">
                 <div className="form-field">
-                  <label>Song Name:</label>
+                  <label>Song Name</label>
                   <input
                     type="text"
-                    placeholder="Enter song name"
+                    placeholder="Song Name"
                     value={newSong}
                     onChange={(e) => setNewSong(e.target.value)}
                   />
                 </div>
                 <div className="form-field">
-                  <label>Song Link:</label>
+                  <label>Song Link</label>
                   <input
                     type="text"
-                    placeholder="Enter song link"
+                    placeholder="URL"
                     value={songLink}
                     onChange={(e) => setSongLink(e.target.value)}
                   />
                 </div>
                 <div className="form-field">
-                  <label>Song Source:</label>
+                  <label>Song Source</label>
                   <input
                     type="text"
-                    placeholder="Enter song source"
+                    placeholder="Source Name"
                     value={songSource}
                     onChange={(e) => setSongSource(e.target.value)}
                   />
                 </div>
                 <div className="form-field">
-                  <label>Click to Upload Thumbnail:</label>
+                  <label>Click to Upload Profile Thumbnail:</label>
                   <input type="file" onChange={handleThumbnailUpload} />
                 </div>
                 {thumbnail && (
@@ -82,10 +82,13 @@ const AddSong = ({ isDialogOpen, setIsDialogOpen }) => {
                     <img src={thumbnail} alt="Thumbnail Preview" />
                   </div>
                 )}
+                <div className="thumbnail-message">
+                  <p>Image has to be of aspect ratio 1:1 with a size of 3000 pixels x 3000 pixels</p>
+                </div>
               </div>
               <div className="dialog-footer">
-                <button onClick={handleAddClick}>Add</button>
-                <button onClick={() => setIsDialogOpen(false)}>Cancel</button>
+              <button onClick={() => setIsDialogOpen(false)}>Cancel</button>
+              <button onClick={handleAddClick}>Add</button>
               </div>
             </div>
           </div>
