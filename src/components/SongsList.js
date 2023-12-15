@@ -40,6 +40,13 @@ const SongsList = () => {
       setSongIndexToDelete(null);
     }
   };
+  if (songs.length === 0) {
+    return (
+      <div className="no-songs-message">
+        <p>No songs available. Add some songs to your playlist.</p>
+      </div>
+    );
+  }
   return (
     <>
       <div className="heading-container">
@@ -53,7 +60,7 @@ const SongsList = () => {
           <h2>ADDED ON</h2>
         </div>
         <div className="heading3">
-          <h2>Actions</h2>
+          {/* <h2>Actions</h2> */}
         </div>
       </div>
       <div className="song-container">

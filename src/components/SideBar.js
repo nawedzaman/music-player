@@ -10,20 +10,17 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      {/* Logo */}
       <div className="logo">
-        {/* Replace the content with your logo */}
-        <img src="logo.png" alt="Logo" />
+        Logo
       </div>
 
-      {/* Menu Item */}
       <div className="menu-item">
-        <span>Home</span>
+        <span className='menu-item-logo'></span>
+        <span className='menu-item-text'>Songs</span>
       </div>
 
-      {/* Logout Button */}
-      <div className="logout-button">
-        <button onClick={handleLogout}>Logout</button>
+      <div className="logout-button-container">
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
       </div>
     </div>
   );
