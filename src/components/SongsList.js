@@ -7,6 +7,13 @@ const SongsList = () => {
   const { songs, updateSong, deleteSong } = useSongsContext();
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [songIndexToDelete, setSongIndexToDelete] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [songsPerPage] = useState(8); 
+
+  const indexOfLastSong = currentPage * songsPerPage;
+  const indexOfFirstSong = indexOfLastSong - songsPerPage;
+  const currentSongs = songs.slice(indexOfFirstSong, indexOfLastSong);
+
 
   const onPlayButtonClick = (index) => {
     const updatedSongs = songs.map((song, i) =>
@@ -63,7 +70,7 @@ const SongsList = () => {
       </div>
       <div className="song-container">
         <ul>
-          {songs.map((song, index) => (
+          {currentSongs.map((song, index) => (
             <li key={index} className="song-item">
               <div className="song-details">
                 <div className="song-info">
@@ -118,6 +125,20 @@ const SongsList = () => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className="pagination-buttons">
+        <button
+          onClick={() => setCurrentPage(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Prev
+        </button>
+        <button
+          onClick={() => setCurrentPage(currentPage + 1)}
+          disabled={indexOfLastSong >= songs.length}
+        >
+          Next
+        </button>
       </div>
     </>
   );

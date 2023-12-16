@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
-
+import React, { createContext, useContext, useState,useEffect } from 'react';
+import dummySongsData from '../assests/dummySongs.json';
 const SongsContext = createContext();
 
 export const useSongsContext = () => {
@@ -8,6 +8,11 @@ export const useSongsContext = () => {
 
 export const SongsProvider = ({ children }) => {
   const [songs, setSongs] = useState([]);
+
+  useEffect(() => {
+    // Load dummy songs from the JSON file
+    setSongs(dummySongsData);
+  }, []);
 
   const addSong = (newSong) => {
     setSongs([...songs, newSong]);

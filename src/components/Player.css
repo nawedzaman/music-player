@@ -46,7 +46,7 @@
     width: 100%;
   }
   input[type=range] {
-    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    appearance: none; /* Remove default styling in WebKit browsers */
     width: 100%;
     height: 5px;
     background-color: black; /* Remove background color from the track */
