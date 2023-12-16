@@ -98,21 +98,18 @@ const SongsList = () => {
                       className="pause-button"
                       onClick={() => onPauseButtonClick(index)}
                     >
-                      Stop
                     </button>
                   ) : (
                     <button
                       className="play-button"
                       onClick={() => onPlayButtonClick(index)}
                     >
-                      Play
                     </button>
                   )}
                   <button
                     className="delete-button"
                     onClick={() => handleDelete(index)}
                   >
-                    Delete
                   </button>
                   {showDeletePopup && (
                     <DeletePopup

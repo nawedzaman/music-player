@@ -92,22 +92,32 @@
   display: flex;
   align-items: center;
   width: 25%;
+  justify-content: space-evenly;
 }
 
 .play-button,
 .pause-button,
 .delete-button {
-  background-color: #3498db;
-  color: #fff;
   border: none;
   padding: 8px 12px;
   margin-right: 5px;
   cursor: pointer;
   border-radius: 4px;
 }
-
+.play-button{
+  width: 40px;
+  height: 40px;
+  background: url('../assests/Start.svg') no-repeat center center;
+}
 .pause-button {
-  background-color: #e74c3c;
+  width: 40px;
+  height: 40px;
+  background: url('../assests/Stop.svg') no-repeat center center;
+}
+.delete-button{
+  width: 40px;
+  height: 40px;
+  background: url('../assests/delete.svg') no-repeat center center;
 }
 .no-songs-message {
   width: 100%;
@@ -119,4 +129,4 @@
   font-size: xx-large;
   font-family: "Roboto";
 }
-/* Add more styles as needed */
+

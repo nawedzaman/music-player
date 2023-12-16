@@ -22,6 +22,7 @@ const Sidebar = () => {
       </div>
 
       <div className="logout-button-container">
+        <span className='logout-button-logo'></span>
         <button className="logout-button" onClick={handleLogout}>Logout</button>
       </div>
     </div>
