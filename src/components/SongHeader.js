@@ -13,7 +13,7 @@ const SongHeader = () => {
         </div>
         <div className="add-song-parent">
           <div className="add-song-button">
-            <button onClick={() => setIsDialogOpen(true)}>Add Song</button>
+            <button onClick={() => setIsDialogOpen(true)}>Add Songs</button>
           </div>
         </div>
       </div>

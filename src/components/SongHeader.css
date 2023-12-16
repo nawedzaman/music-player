@@ -29,4 +29,12 @@
   border-radius: 2px;
   border: none; 
   background: #fdb927;
+  border-radius: 2px;
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.04);
+}
+.add-song-button button:hover {
+  background: #fdb212;
+}
+.add-song-button button:active {
+  background: #fdad00;
 }

@@ -8,7 +8,7 @@ const SongsList = () => {
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [songIndexToDelete, setSongIndexToDelete] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [songsPerPage] = useState(8); 
+  const [songsPerPage] = useState(5); 
 
   const indexOfLastSong = currentPage * songsPerPage;
   const indexOfFirstSong = indexOfLastSong - songsPerPage;

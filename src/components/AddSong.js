@@ -12,7 +12,11 @@ const AddSong = ({ isDialogOpen, setIsDialogOpen }) => {
   
     const handleAddClick = () => {
       if (newSong.trim() !== '' && songLink.trim() !== '' && songSource.trim() !== '') {
-        const timestamp = new Date().toISOString();
+        const timestamp = new Intl.DateTimeFormat('en-GB', {
+          day: 'numeric',
+          month: 'numeric',
+          year: 'numeric',
+        }).format(new Date());
         addSong({ title: newSong, url: songLink, source: songSource, thumbnail:thumbnail, addedOn:timestamp,currentlyPlaying:false });
         setNewSong('');
         setSongLink('');
