@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { verifyOTP } from "../services/api";
+import { verifyOTP,sendOTP } from "../services/api";
 import "./VerifyOTPPage.css";
 const VerifyOTPPage = () => {
   const [otp, setOtp] = useState(["", "", "", ""]);
@@ -57,6 +57,32 @@ const VerifyOTPPage = () => {
       setLoading(false); 
     }
   };
+  const handleResendOTP = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+
+      // Retrieve phone number from session storage
+      const storedPhoneNumber = sessionStorage.getItem("phoneNumber");
+
+      if (!storedPhoneNumber) {
+        setError("Phone number not found. Please go back and enter your phone number.");
+        return;
+      }
+
+      const response = await sendOTP(storedPhoneNumber);
+
+      if (response) {
+        // Handle success
+      } else {
+        setError("Resend OTP failed. Please try again.");
+      }
+    } catch (error) {
+      setError("An error occurred. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
   useEffect(() => {
     // Show the error message for a few seconds and then hide it
     if (error) {
@@ -74,7 +100,7 @@ const VerifyOTPPage = () => {
           <div className="use-another-number" onClick={handleLoginRoute}>
             Use another number
           </div>
-          <div className="resend-otp" onClick={handleVerifyOTP}>
+          <div className="resend-otp" onClick={handleResendOTP}>
             Resend OTP
           </div>
         </div>

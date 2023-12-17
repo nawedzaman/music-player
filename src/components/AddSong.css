@@ -81,11 +81,16 @@ input[type="file"] {
   padding: 5px 16px;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 60%;
   gap: 8px;
   border-radius: 2px;
   border: 1px solid  #D9D9D9;
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+}
+@media (max-width: 1500px) {
+  .custom-file-upload {
+    width: 100%; /* Adjust font size for smaller screens */
+  }
 }
 .thumbnail-preview {
   display: flex;

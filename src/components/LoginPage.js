@@ -21,6 +21,7 @@ const LoginPage = () => {
     try {
       setLoading(true);
       const formattedPhoneNumber = `+${phoneNumber}`;
+      sessionStorage.setItem("phoneNumber", formattedPhoneNumber);
       const response = await sendOTP(formattedPhoneNumber);
 
       if (response) {
