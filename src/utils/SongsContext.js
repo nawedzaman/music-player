@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState,useEffect } from 'react';
+import { createContext, useContext, useState,useEffect } from 'react';
 import dummySongsData from '../assests/dummySongs.json';
 const SongsContext = createContext();
 
@@ -21,10 +21,15 @@ export const SongsProvider = ({ children }) => {
     console.log(updatedSongs);
     setSongs(updatedSongs);
   };
-  const deleteSong = (index) => {
+  const deleteSong = (id) => {
     const updatedSongs = [...songs];
-    updatedSongs.splice(index, 1);
-    setSongs(updatedSongs);
+    const indexToDelete = updatedSongs.findIndex(song => song.id === id);
+    if (indexToDelete !== -1) {
+      updatedSongs.splice(indexToDelete, 1);
+      setSongs(updatedSongs);
+    } else {
+      console.error(`Song with id ${id} not found.`);
+    }
   };
 
   return (

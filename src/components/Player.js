@@ -124,7 +124,7 @@ const Player = () => {
               src={
                 songs[currentSongIndex]?.thumbnail
                   ? songs[currentSongIndex]?.thumbnail
-                  : require("../assests/player-img.png")
+                  : require("../assests/default-thumbnail.png")
               }
               alt="Thumbnail"
             />

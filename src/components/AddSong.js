@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import "./AddSong.css";
 import { useSongsContext } from '../utils/SongsContext';
 const AddSong = ({ isDialogOpen, setIsDialogOpen }) => {
@@ -12,12 +13,13 @@ const AddSong = ({ isDialogOpen, setIsDialogOpen }) => {
   
     const handleAddClick = () => {
       if (newSong.trim() !== '' && songLink.trim() !== '' && songSource.trim() !== '') {
+        const id = uuidv4();
         const timestamp = new Intl.DateTimeFormat('en-GB', {
           day: 'numeric',
           month: 'numeric',
           year: 'numeric',
         }).format(new Date());
-        addSong({ title: newSong, url: songLink, source: songSource, thumbnail:thumbnail, addedOn:timestamp,currentlyPlaying:false });
+        addSong({ id,title: newSong, url: songLink, source: songSource, thumbnail:thumbnail, addedOn:timestamp,currentlyPlaying:false });
         setNewSong('');
         setSongLink('');
         setSongSource('');
