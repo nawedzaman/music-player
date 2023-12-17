@@ -15,7 +15,7 @@ export const SongsProvider = ({ children }) => {
   }, []);
 
   const addSong = (newSong) => {
-    setSongs([...songs, newSong]);
+    setSongs([newSong, ...songs]);
   };
   const updateSong = (updatedSongs) => {
     console.log(updatedSongs);
