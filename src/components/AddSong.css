@@ -145,3 +145,13 @@ input[type="file"] {
   background-color: #1890FF;
   color: #FFFFFF;
 }
+.upload-icon{
+  width: 20px;
+  height: 20px;
+  background: url("../assests/upload.svg") no-repeat center center;
+}
+.delete-icon{
+  width: 40px;
+  height: 40px;
+  background: url('../assests/delete.svg') no-repeat center center;
+}

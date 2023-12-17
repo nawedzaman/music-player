@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 88%;
+    width: 90%;
     position: fixed;
     bottom: 0;
     transform: translateY(100%);
@@ -11,11 +11,10 @@
   }
   .player-container.show {
     transform: translateY(0);
-    bottom: 20px;
+    background-color: #fff;
   }
   .progress-bar {
     width: 100%;
-    padding-right: 10px;
   }
   .progress-bar input{
     width: 100%;

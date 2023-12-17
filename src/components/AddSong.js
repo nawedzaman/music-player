@@ -93,7 +93,7 @@ const AddSong = ({ isDialogOpen, setIsDialogOpen }) => {
                 <div className="form-field">
                   <label class="custom-file-upload">
                     <span className="upload-icon" >
-                      &#x2191;
+                      
                     </span><span>Click to Upload Profile Thumbnail</span>
                     <input type="file" onChange={handleThumbnailUpload} />
                   </label>
@@ -106,7 +106,7 @@ const AddSong = ({ isDialogOpen, setIsDialogOpen }) => {
                       </span>
                     
                     <span className="delete-icon" onClick={clearThumbnail}>
-                      &#x2715;
+                      
                     </span>
                   </div>
                 )}
