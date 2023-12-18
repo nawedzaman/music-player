@@ -3,16 +3,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 90%;
-    position: fixed;
-    bottom: 0;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
+    width: 99%;
+    position: relative;
+
   }
-  .player-container.show {
-    transform: translateY(0);
-    background-color: #fff;
-  }
+
   .progress-bar {
     width: 100%;
   }

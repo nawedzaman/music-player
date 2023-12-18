@@ -105,11 +105,7 @@ const Player = () => {
 
   return (
     <>
-      <div
-        className={`player-container ${
-          songs.some((song) => song.currentlyPlaying) ? "show" : ""
-        }`}
-      >
+      <div className="player-container">
         <div className="progress-bar">
           <input
             ref={timeRangeRef}
