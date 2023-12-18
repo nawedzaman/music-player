@@ -2,12 +2,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 10%;
   height: 100%;
   background: #fff;
   box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
+  z-index: 10;
+}
+.sidebar-open {
+  width: 200px;
 }
 
+.sidebar-closed {
+  width: 0;
+  overflow: hidden;
+}  
 .logo {
   display: flex;
   width: 100%;
@@ -73,4 +80,12 @@
   width: 24px;
   height: 24px;
   background: url('../assests/logout.svg') no-repeat center center;
+}
+.toggle-btn{
+  background: none;
+  border: none;
+  color: black;
+  font-weight: bold;
+  justify-content: flex-end;
+  display: flex;
 }
